@@ -1,7 +1,3 @@
-import css from './card.module.css';
-
-
-
 const pratosPP = [
   {
     id:1,
@@ -126,61 +122,61 @@ const pratosMacarrão = [
 
 
 const pratosPizza = [
-{ id:1,
-  imagem: "../pratosFoto/Pizza Margherita.jpg",
-  titulo: "Pizza Margherita",
-  ingrediente: "molho de tomate, mozzarella, manjericão e azeite",
-  preco: "R$ 55,00",
-},
-{
-  id:2,
-  imagem: "../pratosFoto/Pizza Pepperoni.jpg",
-  titulo: "Pizza Pepperoni",
-  ingrediente: "molho de tomate, mozzarella, pepperoni, orégano",
-  preco: "R$ 63,90",
-},
-{
-  id:3,
-  imagem: "../pratosFoto/Pizza Quattro Formaggi.jpeg",
-  titulo: "Pizza Quattro Formaggi",
-  ingrediente: "molho de tomate, mozzarella, gorgonzola, parmesão e ricota",
-  preco: "R$ 72,90",
-},
-{
-  id: 3,
-  imagem: "../pratosFoto/Pizza Marinara.jpg",
-  titulo: "Pizza Marinara",
-  ingrediente: "molho de tomate, alho, orégano e azeite de oliva",
-  preco: "R$ 49,00",
-},
-{
-  id: 4,
-  imagem: "../pratosFoto/Pizza Prosciutto e Funghi.jpg",
-  titulo: "Pizza Prosciutto e Funghi",
-  ingrediente: "molho de tomate, mozzarella, presunto e cogumelos",
-  preco: "R$ 68,50",
-},
-{
-  id: 5,
-  imagem: "../pratosFoto/Pizza Capricciosa.avif",
-  titulo: "Pizza Capricciosa",
-  ingrediente: "molho de tomate, mozzarella, presunto, cogumelos, alcachofras e azeitonas",
-  preco: "R$ 75,00",
-},
-{
-  id: 6,
-  imagem: "../pratosFoto/Pizza Diavola.jpg",
-  titulo: "Pizza Diavola",
-  ingrediente: "molho de tomate, mozzarella, salame picante e orégano",
-  preco: "R$ 69,90",
-},
-{
-  id: 7,
-  imagem: "../pratosFoto/Pizza Napoletana.jpg",
-  titulo: "Pizza Napoletana",
-  ingrediente: "molho de tomate, mozzarella, anchovas, alcaparras e orégano",
-  preco: "R$ 70,00",
-}
+  { id:1,
+    imagem: "../pratosFoto/Pizza Margherita.jpg",
+    titulo: "Pizza Margherita",
+    ingrediente: "molho de tomate, mozzarella, manjericão e azeite",
+    preco: "R$ 55,00",
+  },
+  {
+    id:2,
+    imagem: "../pratosFoto/Pizza Pepperoni.jpg",
+    titulo: "Pizza Pepperoni",
+    ingrediente: "molho de tomate, mozzarella, pepperoni, orégano",
+    preco: "R$ 63,90",
+  },
+  {
+    id:3,
+    imagem: "../pratosFoto/Pizza Quattro Formaggi.jpeg",
+    titulo: "Pizza Quattro Formaggi",
+    ingrediente: "molho de tomate, mozzarella, gorgonzola, parmesão e ricota",
+    preco: "R$ 72,90",
+  },
+  {
+    id: 4,
+    imagem: "../pratosFoto/Pizza Marinara.jpg",
+    titulo: "Pizza Marinara",
+    ingrediente: "molho de tomate, alho, orégano e azeite de oliva",
+    preco: "R$ 49,00",
+  },
+  {
+    id: 5,
+    imagem: "../pratosFoto/Pizza Prosciutto e Funghi.jpg",
+    titulo: "Pizza Prosciutto e Funghi",
+    ingrediente: "molho de tomate, mozzarella, presunto e cogumelos",
+    preco: "R$ 68,50",
+  },
+  {
+    id: 6,
+    imagem: "../pratosFoto/Pizza Capricciosa.avif",
+    titulo: "Pizza Capricciosa",
+    ingrediente: "molho de tomate, mozzarella, presunto, cogumelos, alcachofras e azeitonas",
+    preco: "R$ 75,00",
+  },
+  {
+    id: 7,
+    imagem: "../pratosFoto/Pizza Diavola.jpg",
+    titulo: "Pizza Diavola",
+    ingrediente: "molho de tomate, mozzarella, salame picante e orégano",
+    preco: "R$ 69,90",
+  },
+  {
+    id: 8,
+    imagem: "../pratosFoto/Pizza Napoletana.jpg",
+    titulo: "Pizza Napoletana",
+    ingrediente: "molho de tomate, mozzarella, anchovas, alcaparras e orégano",
+    preco: "R$ 70,00",
+  }
 
 
 ];
@@ -214,26 +210,38 @@ const sobremesas = [
     preco: "R$ 36,90",
   }
 ]
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+
+
 
 
 const MacarrãoCard = () => {
   return (
-    <>
-    <h1 className={css.subtitulo}>Piatti di Pasta</h1>
-    <div className={css.container}>
-        <div className={css.container2}>
-        {pratosMacarrão.map((item) => (
-          <div key={item.id} className={css.card}>
-            <div className={css.limiteimg}>
-              <img src={item.imagem} alt={item.titulo} className={css.cardImagem} />
+    <>       
+    <h1 className="text-center text-black my-4">Piatti di Pasta</h1>
+      <div className="container">
+        <div className="row justify-content-center g-4 ">
+          {pratosMacarrão.map((item) => (
+            <div key={item.id} className="col-6 col-sm-6 col-md-4 col-lg-3 ">
+              <div className="card h-100 border-1 text-center  shadow">
+                <div className="ratio ratio-4x3">
+                  <img
+                    src={item.imagem}
+                    alt={item.titulo}
+                    className="card-img-top object-fit-cover"
+                  />
+                </div>
+                <div className="card-body">
+                  <h5 className="card-title text-dark">{item.titulo}</h5>
+                  <p className="card-text text-secondary">{item.ingrediente}</p>
+                  <p className="card-text text-success fw-bold fs-5">{item.preco}</p>
+                </div>
+              </div>
             </div>
-            <p className={css.titulo}>{item.titulo}</p>
-            <p className={css.ingrediente}>{item.ingrediente}</p>
-            <p className={css.preco}>{item.preco}</p>
-          </div>
-        ))}
+          ))}
         </div>
-      </div>
+      </div>  
     </>
   )
 }
@@ -242,65 +250,88 @@ const MacarrãoCard = () => {
 const PizzaCard = () => {
   return (
     <>
-    <h1 className={css.subtitulo}>Pizze</h1>
-      <div className={css.container}>
-        <div className={css.container2}>
-        {pratosPizza.map((item) => (
-          <div key={item.id} className={css.card}>
-            <div className={css.limiteimg}>
-              <img src={item.imagem} alt={item.titulo} className={css.cardImagem} />
+     <h1 className="text-center text-dark">Pizze</h1>
+      <div className="container">
+        <div className="row justify-content-center g-4">
+          {pratosPizza.map((item) => (
+            <div key={item.id} className="col-6 col-sm-6 col-md-4 col-lg-3">
+              <div className="card h-100 border-1 text-center shadow">
+  
+                <div className="ratio ratio-4x3">
+                  <img
+                    src={item.imagem}
+                    alt={item.titulo}
+                    className="card-img-top object-fit-cover"
+                  />
+                </div>
+                <div className="card-body">
+                  <h5 className="card-title">{item.titulo}</h5>
+                  <p className="card-text text-muted">{item.ingrediente}</p>
+                  <p className="card-text text-success fw-bold fs-5">{item.preco}</p>
+                </div>
+              </div>
             </div>
-            <p className={css.titulo}>{item.titulo}</p>
-            <p className={css.ingrediente}>{item.ingrediente}</p>
-            <p className={css.preco}>{item.preco}</p>
-          </div>
-        ))}
+          ))}
         </div>
-      </div>
-      
-    
+      </div> 
 </>
   );
 };
 const SobremesaCard = () => {
   return (
     <>
-    <h1 className={css.subtitulo}>Dolci della Casa</h1>
-    <div className={css.container}>
-      <div className={css.container2}>
-      {sobremesas.map((item) => (
-        <div key={item.id} className={css.card}>
-          <div className={css.limiteimg}>
-            <img src={item.imagem} alt={item.titulo} className={css.cardImagem} />
-          </div>
-          <p className={css.titulo}>{item.titulo}</p>
-          <p className={css.ingrediente}>{item.ingrediente}</p>
-          <p className={css.preco}>{item.preco}</p>
+     <h1 className="text-center my-4 text-dark">Dolci della Casa</h1>
+      <div className="container">
+        <div className="row justify-content-center g-4">
+          {sobremesas.map((item) => (
+            <div key={item.id} className="col-6 col-sm-6 col-md-4 col-lg-3">
+              <div className="card h-100 border-1 text-center shadow">
+                <div className="ratio ratio-4x3">
+                  <img
+                    src={item.imagem}
+                    alt={item.titulo}
+                    className="card-img-top object-fit-cover"
+                  />
+                </div>
+                <div className="card-body">
+                  <h5 className="card-title">{item.titulo}</h5>
+                  <p className="card-text text-muted">{item.ingrediente}</p>
+                  <p className="card-text text-success fw-bold fs-5">{item.preco}</p>
+                </div>
+              </div>
+            </div>
+          ))}
         </div>
-      ))}
       </div>
-    </div>
     </>
   )
 }
 const PrimeirosPratosCard = () => {
   return (
     <>
-    <h1 className={css.subtitulo}>Primi Piatti </h1>
-    <div className={css.container}>
-      <div className={css.container2}>
-      {pratosPP.map((item) => (
-        <div key={item.id} className={css.card}>
-          <div className={css.limiteimg}>
-            <img src={item.imagem} alt={item.titulo} className={css.cardImagem} />
-          </div>
-          <p className={css.titulo}>{item.titulo}</p>
-          <p className={css.ingrediente}>{item.ingrediente}</p>
-          <p className={css.preco}>{item.preco}</p>
+    <h1 className="text-center my-4 text-dark">Primi Piatti</h1>
+      <div className="container">
+        <div className="row justify-content-center g-4">
+          {pratosPP.map((item) => (
+            <div key={item.id} className="col-6 col-sm-6 col-md-4 col-lg-3">
+              <div className="card h-100 border-1 text-center shadow">
+                <div className="ratio ratio-4x3">
+                  <img
+                    src={item.imagem}
+                    alt={item.titulo}
+                    className="card-img-top object-fit-cover"
+                  />
+                </div>
+                <div className="card-body">
+                  <h5 className="card-title">{item.titulo}</h5>
+                  <p className="card-text text-muted">{item.ingrediente}</p>
+                  <p className="card-text text-success fw-bold fs-5">{item.preco}</p>
+                </div>
+              </div>
+            </div>
+          ))}
         </div>
-      ))}
       </div>
-    </div>
     </>
   )
 }
